@@ -1,7 +1,6 @@
 package com.yournews.newsdatasetting;
 
 import com.yournews.newsdatasetting.model.Division;
-import com.yournews.newsdatasetting.model.Group;
 import com.yournews.newsdatasetting.model.News;
 import com.yournews.newsdatasetting.model.Section;
 import com.yournews.newsdatasetting.repository.*;
@@ -29,8 +28,7 @@ public class ExcelDataController {
     private final NewsRepository newsRepository;
     private final SectionRepository sectionRepository;
     private final DivisionRepository divisionRepository;
-    private final GroupRepository groupRepository;
-    public static final String FILE_PATH = "C:\\Users\\ldu\\Downloads\\NewsResult_20220101-20220131 (1).xlsx";
+    public static final String FILE_PATH = "C:\\Users\\ldu\\Downloads\\202201\\NewsResult_20220101-20220131.xlsx";
 
 
     @GetMapping("/update")
@@ -123,18 +121,6 @@ public class ExcelDataController {
 
                     divisionRepository.save(divisionEntity);
 
-                    if (classificationSplit.length >= 3) {
-                        //length 2이상은 소분류있으므로 group 저장 실행
-
-                        String groupName = classificationSplit[2];
-                        Group groupEntity = Group.builder()
-                                .division(divisionEntity)
-                                .groupName(groupName)
-                                .build();
-
-                        groupRepository.save(groupEntity);
-                    }
-
                 }
 
             }
@@ -142,7 +128,7 @@ public class ExcelDataController {
 
             System.out.println(indexNum++);
 
-            if (indexNum % 50 == 0) {
+            if (indexNum % 100 == 0) {
                 timeList.put(indexNum, System.currentTimeMillis());
             }
 

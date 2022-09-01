@@ -21,14 +21,14 @@ spring:
 #    password: 12341234
 
   datasource:
-    url: jdbc:mysql://localhost:3306/yournews2
+    url: jdbc:mysql://localhost:3306/yournews
     username: root
     password: 1234
 
   jpa:
     show_sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
     properties:
       hibernate:
         format_sql: true
