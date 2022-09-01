@@ -23,6 +23,14 @@ public class News {
     private String press;
     private String author;
     private String title;
+    @Lob
+    private String person;
+    @Lob
+    private String location;
+    @Lob
+    private String organization;
+    @Lob
+    private String keyword;
     private String contents;
     private String url;
 }

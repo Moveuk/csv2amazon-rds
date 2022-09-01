@@ -14,7 +14,7 @@ import javax.persistence.*;
 @Getter
 @Builder
 @AllArgsConstructor
-public class  Section {
+public class Section {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name= "section_id")

@@ -9,7 +9,7 @@ import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
-@Entity(name = "group1")
+@Entity(name = "Groups2")
 @NoArgsConstructor
 @Getter
 @Builder
@@ -17,7 +17,7 @@ import javax.persistence.*;
 public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name= "groups1_id")
+    @Column(name= "groups2_id")
     private Long id;
 
     @ManyToOne
