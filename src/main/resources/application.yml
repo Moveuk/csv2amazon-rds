@@ -1,0 +1,34 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+
+  h2:
+    console:
+      enabled: true
+
+#  datasource:
+#    url: jdbc:h2:tcp://localhost/D:\IT\Project\NewsCrawling\NewsDataSetting/yournews3
+##    url: jdbc:h2:mem:yournews
+#    driver-class-name: org.h2.Driver
+#    username: sa
+#    password:
+
+#  datasource:
+#    url: jdbc:mysql://ldudb.cs3wzmj0phr7.ap-northeast-2.rds.amazonaws.com:3306/yournews
+#    username: admin
+#    password: 12341234
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/yournews
+    username: root
+    password: 1234
+
+  jpa:
+#    show_sql: true
+    hibernate:
+      ddl-auto: create
+#    properties:
+#      hibernate:
+#        format_sql: true
