@@ -43,8 +43,12 @@ dependencies {
     implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '5.2.2'
 // https://mvnrepository.com/artifact/org.apache.tika/tika-core
     implementation group: 'org.apache.tika', name: 'tika-core', version: '2.4.1'
-    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+
+// https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.4.0'
+
+// https://mvnrepository.com/artifact/org.jsoup/jsoup
+    implementation group: 'org.jsoup', name: 'jsoup', version: '1.15.3'
 }
 
 tasks.named('test') {
