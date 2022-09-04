@@ -23,7 +23,7 @@ public class SearchController {
         List<NewsNoNormalDto> collect = newsRepository.findByKeywordContaining(keyword);
         long timestampAfter = System.currentTimeMillis();
 
-        log.info("5000건 중 키워드 검색 : " + (timestampAfter - timestampBefore) + "ms");
+        log.info("102286건 중 키워드 검색 : " + (timestampAfter - timestampBefore) + "ms");
         return collect;
     }
 
