@@ -8,12 +8,12 @@ import org.jsoup.select.Elements;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class CrawlWithJSoup {
+public class CrawlWithJSoupInMK {
 
     private String url;
 
-    public CrawlWithJSoup() {
-        url = "https://www.joongang.co.kr/article/25099580#home";
+    public CrawlWithJSoupInMK() {
+        url = "https://www.mk.co.kr/news/world/view/2022/08/760000/";
     }
 
     public void activateBot() {
@@ -26,8 +26,7 @@ public class CrawlWithJSoup {
 
             // dom select
             // title
-            Elements contents = doc.select("#container > section > article > header > h1");
-
+            Elements contents = doc.select("#top_header > div > div > h1");
             //제목 get
             String text = contents.text();
 
@@ -35,12 +34,16 @@ public class CrawlWithJSoup {
             JSONObject obj = new JSONObject();
             obj.put("title", text);
 
+            //기자 이름
+            contents = doc.select("#top_header > div > div > div.news_title_author > ul > li.author");
+            obj.put("author", contents.text());
+
             //중앙일보
             contents = doc.select("#container > section > article > header > div.datetime > span");
             obj.put("press", contents.text());
 
             //기고 시간
-            contents = doc.select("#container > section > article > header > div.datetime > div > p");
+            contents = doc.select("#top_header > div > div > div.news_title_author > ul > li.lasttime");
             obj.put("date", contents.text().replace("입력","").trim());
 
             //기사 전문
@@ -72,7 +75,7 @@ public class CrawlWithJSoup {
     }
 
     public static void main(String[] args) {
-        CrawlWithJSoup bot1 = new CrawlWithJSoup();
+        CrawlWithJSoupInMK bot1 = new CrawlWithJSoupInMK();
         bot1.activateBot();
     }
 }
